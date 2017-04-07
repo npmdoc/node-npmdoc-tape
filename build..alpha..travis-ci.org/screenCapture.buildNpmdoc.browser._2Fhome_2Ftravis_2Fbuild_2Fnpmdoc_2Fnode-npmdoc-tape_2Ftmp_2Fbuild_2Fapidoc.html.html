@@ -1,0 +1,3724 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/substack/tape">tape (v4.6.3)</a>
+</h1>
+<h4>tap-producing test harness for node and browsers</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tape">module tape</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test">
+            function <span class="apidocSignatureSpan">tape.</span>Test
+            <span class="apidocSignatureSpan">(name_, opts_, cb_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.createHarness">
+            function <span class="apidocSignatureSpan">tape.</span>createHarness
+            <span class="apidocSignatureSpan">(conf_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.createStream">
+            function <span class="apidocSignatureSpan">tape.</span>createStream
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.getHarness">
+            function <span class="apidocSignatureSpan">tape.</span>getHarness
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.onFinish">
+            function <span class="apidocSignatureSpan">tape.</span>onFinish
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.only">
+            function <span class="apidocSignatureSpan">tape.</span>only
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.results">
+            function <span class="apidocSignatureSpan">tape.</span>results
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.skip">
+            function <span class="apidocSignatureSpan">tape.</span>skip
+            <span class="apidocSignatureSpan">(name_, _opts, _cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.test">
+            function <span class="apidocSignatureSpan">tape.</span>test
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tape.</span>Test.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tape.</span>results.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tape.Test">module tape.Test</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.Test">
+            function <span class="apidocSignatureSpan">tape.</span>Test
+            <span class="apidocSignatureSpan">(name_, opts_, cb_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.skip">
+            function <span class="apidocSignatureSpan">tape.Test.</span>skip
+            <span class="apidocSignatureSpan">(name_, _opts, _cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.super_">
+            function <span class="apidocSignatureSpan">tape.Test.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tape.Test.prototype">module tape.Test.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype._assert">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>_assert
+            <span class="apidocSignatureSpan">(ok, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype._end">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>_end
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype._exit">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>_exit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype._pendingAsserts">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>_pendingAsserts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.assert">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>assert
+            <span class="apidocSignatureSpan">(value, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.comment">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>comment
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.deepEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>deepEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.deepEquals">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>deepEquals
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.deepLooseEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>deepLooseEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.doesNotEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>doesNotEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.doesNotThrow">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>doesNotThrow
+            <span class="apidocSignatureSpan">(fn, expected, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.end">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>end
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.equal">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>equal
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.equals">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>equals
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.error">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>error
+            <span class="apidocSignatureSpan">(err, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.fail">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>fail
+            <span class="apidocSignatureSpan">(msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.false">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>false
+            <span class="apidocSignatureSpan">(value, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.ifErr">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>ifErr
+            <span class="apidocSignatureSpan">(err, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.ifError">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>ifError
+            <span class="apidocSignatureSpan">(err, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.iferror">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>iferror
+            <span class="apidocSignatureSpan">(err, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.is">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>is
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isEquivalent">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isEquivalent
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isInequal">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isInequal
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isInequivalent">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isInequivalent
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isNot">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNot
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isNotDeepEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNotDeepEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isNotDeeply">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNotDeeply
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isNotEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNotEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.isNotEquivalent">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNotEquivalent
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.looseEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>looseEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.looseEquals">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>looseEquals
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.not">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>not
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notDeepEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notDeepEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notDeepLooseEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notDeepLooseEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notDeeply">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notDeeply
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notEquals">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notEquals
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notEquivalent">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notEquivalent
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notLooseEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notLooseEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notLooseEquals">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notLooseEquals
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notOk">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notOk
+            <span class="apidocSignatureSpan">(value, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notSame">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notSame
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notStrictEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notStrictEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notStrictEquals">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notStrictEquals
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.notok">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notok
+            <span class="apidocSignatureSpan">(value, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.ok">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>ok
+            <span class="apidocSignatureSpan">(value, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.pass">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>pass
+            <span class="apidocSignatureSpan">(msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.plan">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>plan
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.run">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.same">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>same
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.skip">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>skip
+            <span class="apidocSignatureSpan">(msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.strictEqual">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>strictEqual
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.strictEquals">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>strictEquals
+            <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.test">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>test
+            <span class="apidocSignatureSpan">(name, opts, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.throws">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>throws
+            <span class="apidocSignatureSpan">(fn, expected, msg, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.timeoutAfter">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>timeoutAfter
+            <span class="apidocSignatureSpan">(ms)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.Test.prototype.true">
+            function <span class="apidocSignatureSpan">tape.Test.prototype.</span>true
+            <span class="apidocSignatureSpan">(value, msg, extra)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tape.results">module tape.results</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.results.results">
+            function <span class="apidocSignatureSpan">tape.</span>results
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.results.super_">
+            function <span class="apidocSignatureSpan">tape.results.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tape.results.prototype">module tape.results.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.results.prototype._watch">
+            function <span class="apidocSignatureSpan">tape.results.prototype.</span>_watch
+            <span class="apidocSignatureSpan">(t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.results.prototype.close">
+            function <span class="apidocSignatureSpan">tape.results.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.results.prototype.createStream">
+            function <span class="apidocSignatureSpan">tape.results.prototype.</span>createStream
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.results.prototype.only">
+            function <span class="apidocSignatureSpan">tape.results.prototype.</span>only
+            <span class="apidocSignatureSpan">(t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tape.results.prototype.push">
+            function <span class="apidocSignatureSpan">tape.results.prototype.</span>push
+            <span class="apidocSignatureSpan">(t)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tape" id="apidoc.module.tape">module tape</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test" id="apidoc.element.tape.Test">
+        function <span class="apidocSignatureSpan">tape.</span>Test
+        <span class="apidocSignatureSpan">(name_, opts_, cb_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Test(name_, opts_, cb_) {
+    if (! (this instanceof Test)) {
+        return new Test(name_, opts_, cb_);
+    }
+
+    var args = getTestArgs(name_, opts_, cb_);
+
+    this.readable = true;
+    this.name = args.name || '(anonymous)';
+    this.assertCount = 0;
+    this.pendingCount = 0;
+    this._skip = args.opts.skip || false;
+    this._timeout = args.opts.timeout;
+    this._objectPrintDepth = args.opts.objectPrintDepth || 5;
+    this._plan = undefined;
+    this._cb = args.cb;
+    this._progeny = [];
+    this._ok = true;
+
+    for (var prop in this) {
+        this[prop] = (function bind(self, val) {
+            if (typeof val === 'function') {
+                return function bound() {
+                    return val.apply(self, arguments);
+                };
+            }
+            else return val;
+        })(this, this[prop]);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.createHarness" id="apidoc.element.tape.createHarness">
+        function <span class="apidocSignatureSpan">tape.</span>createHarness
+        <span class="apidocSignatureSpan">(conf_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createHarness(conf_) {
+    if (!conf_) conf_ = {};
+    var results = createResult();
+    if (conf_.autoclose !== false) {
+        results.once('done', function () { results.close() });
+    }
+
+    var test = function (name, conf, cb) {
+        var t = new Test(name, conf, cb);
+        test._tests.push(t);
+
+        (function inspectCode (st) {
+            st.on('test', function sub (st_) {
+                inspectCode(st_);
+            });
+            st.on('result', function (r) {
+                if (!r.ok &amp;&amp; typeof r !== 'string') test._exitCode = 1
+            });
+        })(t);
+
+        results.push(t);
+        return t;
+    };
+    test._results = results;
+
+    test._tests = [];
+
+    test.createStream = function (opts) {
+        return results.createStream(opts);
+    };
+
+    test.onFinish = function (cb) {
+        results.on('done', cb);
+    };
+
+    var only = false;
+    test.only = function () {
+        if (only) throw new Error('there can only be one only test');
+        only = true;
+        var t = test.apply(null, arguments);
+        results.only(t);
+        return t;
+    };
+    test._exitCode = 0;
+
+    test.close = function () { results.close() };
+
+    return test;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You may pass the same options that [`test()`](#testname-opts-cb) accepts.
+
+## t.comment(message)
+
+Print a message without breaking the tap output. (Useful when using e.g. `tap-colorize` where output is buffered &amp; `console
+.log` will print in incorrect order vis-a-vis tap output.)
+
+## var htest = test.<span class="apidocCodeKeywordSpan">createHarness</span>()
+
+Create a new test harness instance, which is a function like `test()`, but with
+a new pending stack and test state.
+
+By default the TAP output goes to `console.log()`. You can pipe the output to
+someplace else if you `htest.createStream().pipe()` to a destination stream on
+the first tick.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.createStream" id="apidoc.element.tape.createStream">
+        function <span class="apidocSignatureSpan">tape.</span>createStream
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createStream = function (opts) {
+    if (!opts) opts = {};
+    if (!harness) {
+        var output = through();
+        getHarness({ stream: output, objectMode: opts.objectMode });
+        return output;
+    }
+    return harness.createStream(opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+lazyLoad.createStream = function (opts) {
+    if (!opts) opts = {};
+    if (!harness) {
+        var output = through();
+        getHarness({ stream: output, objectMode: opts.objectMode });
+        return output;
+    }
+    return harness.<span class="apidocCodeKeywordSpan">createStream</span>(opts);
+};
+
+lazyLoad.onFinish = function () {
+    return getHarness().onFinish.apply(this, arguments);
+};
+
+lazyLoad.getHarness = getHarness
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.getHarness" id="apidoc.element.tape.getHarness">
+        function <span class="apidocSignatureSpan">tape.</span>getHarness
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getHarness(opts) {
+    if (!opts) opts = {};
+    opts.autoclose = !canEmitExit;
+    if (!harness) harness = createExitHarness(opts);
+    return harness;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.onFinish" id="apidoc.element.tape.onFinish">
+        function <span class="apidocSignatureSpan">tape.</span>onFinish
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onFinish = function () {
+    return getHarness().onFinish.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you forget to `t.plan()` out how many assertions you are going to run and you
+don't call `t.end()` explicitly, your test will hang.
+
+## test.skip(name, cb)
+
+Generate a new test that will be skipped over.
+
+## test.<span class="apidocCodeKeywordSpan">onFinish</span>(fn)
+
+The onFinish hook will get invoked when ALL tape tests have finished
+right before tape is about to print the test summary.
+
+## t.plan(n)
+
+Declare that `n` assertions should be run. `t.end()` will be called
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.only" id="apidoc.element.tape.only">
+        function <span class="apidocSignatureSpan">tape.</span>only
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">only = function () {
+    return getHarness().only.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+var only = false;
+test.only = function () {
+    if (only) throw new Error('there can only be one only test');
+    only = true;
+    var t = test.apply(null, arguments);
+    results.<span class="apidocCodeKeywordSpan">only</span>(t);
+    return t;
+};
+test._exitCode = 0;
+
+test.close = function () { results.close() };
+
+return test;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.results" id="apidoc.element.tape.results">
+        function <span class="apidocSignatureSpan">tape.</span>results
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Results() {
+    if (!(this instanceof Results)) return new Results;
+    this.count = 0;
+    this.fail = 0;
+    this.pass = 0;
+    this._stream = through();
+    this.tests = [];
+    this._only = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.skip" id="apidoc.element.tape.skip">
+        function <span class="apidocSignatureSpan">tape.</span>skip
+        <span class="apidocSignatureSpan">(name_, _opts, _cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">skip = function (name_, _opts, _cb) {
+    var args = getTestArgs.apply(null, arguments);
+    args.opts.skip = true;
+    return Test(args.name, args.opts, args.cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  See test.timeoutAfter.
+- opts.objectPrintDepth = 5. Configure max depth of expected / actual object
+  printing.
+
+If you forget to `t.plan()` out how many assertions you are going to run and you
+don't call `t.end()` explicitly, your test will hang.
+
+## test.<span class="apidocCodeKeywordSpan">skip</span>(name, cb)
+
+Generate a new test that will be skipped over.
+
+## test.onFinish(fn)
+
+The onFinish hook will get invoked when ALL tape tests have finished
+right before tape is about to print the test summary.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.test" id="apidoc.element.tape.test">
+        function <span class="apidocSignatureSpan">tape.</span>test
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">test = function () {
+    return getHarness().apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that the function call `fn()` throws an exception. `expected`, if present, must be a `RegExp` or `Function`. The `RegExp`
+matches the string representation of the exception, as generated by `err.toString()`. The `Function` is the exception thrown (e.
+g. `Error`). `msg` is an optional description of the assertion.
+
+## t.doesNotThrow(fn, expected, msg)
+
+Assert that the function call `fn()` does not throw an exception. `msg` is an optional description of the assertion.
+
+## t.<span class="apidocCodeKeywordSpan">test</span>(name, [opts], cb)
+
+Create a subtest with a new test handle `st` from `cb(st)` inside the current
+test `t`. `cb(st)` will only fire when `t` finishes. Additional tests queued up
+after `t` will not be run until all subtests finish.
+
+You may pass the same options that [`test()`](#testname-opts-cb) accepts.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tape.Test" id="apidoc.module.tape.Test">module tape.Test</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.Test" id="apidoc.element.tape.Test.Test">
+        function <span class="apidocSignatureSpan">tape.</span>Test
+        <span class="apidocSignatureSpan">(name_, opts_, cb_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Test(name_, opts_, cb_) {
+    if (! (this instanceof Test)) {
+        return new Test(name_, opts_, cb_);
+    }
+
+    var args = getTestArgs(name_, opts_, cb_);
+
+    this.readable = true;
+    this.name = args.name || '(anonymous)';
+    this.assertCount = 0;
+    this.pendingCount = 0;
+    this._skip = args.opts.skip || false;
+    this._timeout = args.opts.timeout;
+    this._objectPrintDepth = args.opts.objectPrintDepth || 5;
+    this._plan = undefined;
+    this._cb = args.cb;
+    this._progeny = [];
+    this._ok = true;
+
+    for (var prop in this) {
+        this[prop] = (function bind(self, val) {
+            if (typeof val === 'function') {
+                return function bound() {
+                    return val.apply(self, arguments);
+                };
+            }
+            else return val;
+        })(this, this[prop]);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.skip" id="apidoc.element.tape.Test.skip">
+        function <span class="apidocSignatureSpan">tape.Test.</span>skip
+        <span class="apidocSignatureSpan">(name_, _opts, _cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">skip = function (name_, _opts, _cb) {
+    var args = getTestArgs.apply(null, arguments);
+    args.opts.skip = true;
+    return Test(args.name, args.opts, args.cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  See test.timeoutAfter.
+- opts.objectPrintDepth = 5. Configure max depth of expected / actual object
+  printing.
+
+If you forget to `t.plan()` out how many assertions you are going to run and you
+don't call `t.end()` explicitly, your test will hang.
+
+## test.<span class="apidocCodeKeywordSpan">skip</span>(name, cb)
+
+Generate a new test that will be skipped over.
+
+## test.onFinish(fn)
+
+The onFinish hook will get invoked when ALL tape tests have finished
+right before tape is about to print the test summary.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.super_" id="apidoc.element.tape.Test.super_">
+        function <span class="apidocSignatureSpan">tape.Test.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tape.Test.prototype" id="apidoc.module.tape.Test.prototype">module tape.Test.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype._assert" id="apidoc.element.tape.Test.prototype._assert">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>_assert
+        <span class="apidocSignatureSpan">(ok, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function assert(ok, opts) {
+    var self = this;
+    var extra = opts.extra || {};
+
+    var res = {
+        id : self.assertCount ++,
+        ok : Boolean(ok),
+        skip : defined(extra.skip, opts.skip),
+        name : defined(extra.message, opts.message, '(unnamed assert)'),
+        operator : defined(extra.operator, opts.operator),
+        objectPrintDepth : self._objectPrintDepth
+    };
+    if (has(opts, 'actual') || has(extra, 'actual')) {
+        res.actual = defined(extra.actual, opts.actual);
+    }
+    if (has(opts, 'expected') || has(extra, 'expected')) {
+        res.expected = defined(extra.expected, opts.expected);
+    }
+    this._ok = Boolean(this._ok &amp;&amp; ok);
+
+    if (!ok) {
+        res.error = defined(extra.error, opts.error, new Error(res.name));
+    }
+
+    if (!ok) {
+        var e = new Error('exception');
+        var err = (e.stack || '').split('\n');
+        var dir = path.dirname(__dirname) + path.sep;
+
+        for (var i = 0; i &lt; err.length; i++) {
+            var m = /^[^\s]*\s*\bat\s+(.+)/.exec(err[i]);
+            if (!m) {
+                continue;
+            }
+
+            var s = m[1].split(/\s+/);
+            var filem = /((?:\/|[A-Z]:\\)[^:\s]+:(\d+)(?::(\d+))?)/.exec(s[1]);
+            if (!filem) {
+                filem = /((?:\/|[A-Z]:\\)[^:\s]+:(\d+)(?::(\d+))?)/.exec(s[2]);
+
+                if (!filem) {
+                    filem = /((?:\/|[A-Z]:\\)[^:\s]+:(\d+)(?::(\d+))?)/.exec(s[3]);
+
+                    if (!filem) {
+                        continue;
+                    }
+                }
+            }
+
+            if (filem[1].slice(0, dir.length) === dir) {
+                continue;
+            }
+
+            res.functionName = s[0];
+            res.file = filem[1];
+            res.line = Number(filem[2]);
+            if (filem[3]) res.column = filem[3];
+
+            res.at = m[1];
+            break;
+        }
+    }
+
+    self.emit('result', res);
+
+    var pendingAsserts = self._pendingAsserts();
+    if (!pendingAsserts) {
+        if (extra.exiting) {
+            self._end();
+        } else {
+            nextTick(function () {
+                self._end();
+            });
+        }
+    }
+
+    if (!self._planError &amp;&amp; pendingAsserts &lt; 0) {
+        self._planError = true;
+        self.fail('plan != count', {
+            expected : self._plan,
+            actual : self._plan - pendingAsserts
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype._end" id="apidoc.element.tape.Test.prototype._end">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>_end
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_end = function (err) {
+    var self = this;
+    if (this._progeny.length) {
+        var t = this._progeny.shift();
+        t.on('end', function () { self._end() });
+        t.run();
+        return;
+    }
+
+    if (!this.ended) this.emit('end');
+    var pendingAsserts = this._pendingAsserts();
+    if (!this._planError &amp;&amp; this._plan !== undefined &amp;&amp; pendingAsserts) {
+        this._planError = true;
+        this.fail('plan != count', {
+            expected : this._plan,
+            actual : this.assertCount
+        });
+    }
+    this.ended = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype._exit" id="apidoc.element.tape.Test.prototype._exit">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>_exit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_exit = function () {
+    if (this._plan !== undefined &amp;&amp;
+        !this._planError &amp;&amp; this.assertCount !== this._plan) {
+        this._planError = true;
+        this.fail('plan != count', {
+            expected : this._plan,
+            actual : this.assertCount,
+            exiting : true
+        });
+    }
+    else if (!this.ended) {
+        this.fail('test exited without ending', {
+            exiting: true
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+
+    if (!ended) {
+        var only = harness._results._only;
+        for (var i = 0; i &lt; harness._tests.length; i++) {
+            var t = harness._tests[i];
+            if (only &amp;&amp; t !== only) continue;
+            t.<span class="apidocCodeKeywordSpan">_exit</span>();
+        }
+    }
+    harness.close();
+    process.exit(code || harness._exitCode);
+});
+
+return harness;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype._pendingAsserts" id="apidoc.element.tape.Test.prototype._pendingAsserts">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>_pendingAsserts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_pendingAsserts = function () {
+    if (this._plan === undefined) {
+        return 1;
+    }
+    else {
+        return this._plan - (this._progeny.length + this.assertCount);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.assert" id="apidoc.element.tape.Test.prototype.assert">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>assert
+        <span class="apidocSignatureSpan">(value, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assert = function (value, msg, extra) {
+    this._assert(value, {
+        message : defined(msg, 'should be truthy'),
+        operator : 'ok',
+        expected : true,
+        actual : value,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Generate an assertion that will be skipped over.
+
+## t.ok(value, msg)
+
+Assert that `value` is truthy with an optional description of the assertion `msg`.
+
+Aliases: `t.true()`, `t.<span class="apidocCodeKeywordSpan">assert</span>()`
+
+## t.notOk(value, msg)
+
+Assert that `value` is falsy with an optional description of the assertion `msg`.
+
+Aliases: `t.false()`, `t.notok()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.comment" id="apidoc.element.tape.Test.prototype.comment">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>comment
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">comment = function (msg) {
+    var that = this;
+    forEach(trim(msg).split('\n'), function (aMsg) {
+        that.emit('result', trim(aMsg).replace(/^#\s*/, ''));
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Create a subtest with a new test handle `st` from `cb(st)` inside the current
+test `t`. `cb(st)` will only fire when `t` finishes. Additional tests queued up
+after `t` will not be run until all subtests finish.
+
+You may pass the same options that [`test()`](#testname-opts-cb) accepts.
+
+## t.<span class="apidocCodeKeywordSpan">comment</span>(message)
+
+Print a message without breaking the tap output. (Useful when using e.g. `tap-colorize` where output is buffered &amp; `console
+.log` will print in incorrect order vis-a-vis tap output.)
+
+## var htest = test.createHarness()
+
+Create a new test harness instance, which is a function like `test()`, but with
+a new pending stack and test state.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.deepEqual" id="apidoc.element.tape.Test.prototype.deepEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>deepEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deepEqual = function (a, b, msg, extra) {
+    this._assert(deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'deepEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.isNot()`, `t.not()`, `t.doesNotEqual()`, `t.isInequal()`
+
+## t.<span class="apidocCodeKeywordSpan">deepEqual</span>(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.deepEquals()`, `t.isEquivalent()`, `t.same()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.deepEquals" id="apidoc.element.tape.Test.prototype.deepEquals">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>deepEquals
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deepEquals = function (a, b, msg, extra) {
+    this._assert(deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'deepEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">deepEquals</span>()`, `t.isEquivalent()`, `t.same()`
+
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.deepLooseEqual" id="apidoc.element.tape.Test.prototype.deepLooseEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>deepLooseEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deepLooseEqual = function (a, b, msg, extra) {
+    this._assert(deepEqual(a, b), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'deepLooseEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notEquivalent()`, `t.notDeeply()`, `t.notSame()`,
+`t.isNotDeepEqual()`, `t.isNotDeeply()`, `t.isNotEquivalent()`,
+`t.isInequivalent()`
+
+## t.<span class="apidocCodeKeywordSpan">deepLooseEqual</span>(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.looseEqual()`, `t.looseEquals()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.doesNotEqual" id="apidoc.element.tape.Test.prototype.doesNotEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>doesNotEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doesNotEqual = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.isNot()`, `t.not()`, `t.<span class="apidocCodeKeywordSpan">doesNotEqual</span>()`, `t.isInequal()`
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.doesNotThrow" id="apidoc.element.tape.Test.prototype.doesNotThrow">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>doesNotThrow
+        <span class="apidocSignatureSpan">(fn, expected, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doesNotThrow = function (fn, expected, msg, extra) {
+    if (typeof expected === 'string') {
+        msg = expected;
+        expected = undefined;
+    }
+    var caught = undefined;
+    try {
+        fn();
+    }
+    catch (err) {
+        caught = { error : err };
+    }
+    this._assert(!caught, {
+        message : defined(msg, 'should not throw'),
+        operator : 'throws',
+        actual : caught &amp;&amp; caught.error,
+        expected : expected,
+        error : caught &amp;&amp; caught.error,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Aliases: `t.notLooseEqual()`, `t.notLooseEquals()`
+
+## t.throws(fn, expected, msg)
+
+Assert that the function call `fn()` throws an exception. `expected`, if present, must be a `RegExp` or `Function`. The `RegExp`
+matches the string representation of the exception, as generated by `err.toString()`. The `Function` is the exception thrown (e.
+g. `Error`). `msg` is an optional description of the assertion.
+
+## t.<span class="apidocCodeKeywordSpan">doesNotThrow</span>(fn, expected, msg)
+
+Assert that the function call `fn()` does not throw an exception. `msg` is an optional description of the assertion.
+
+## t.test(name, [opts], cb)
+
+Create a subtest with a new test handle `st` from `cb(st)` inside the current
+test `t`. `cb(st)` will only fire when `t` finishes. Additional tests queued up
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.end" id="apidoc.element.tape.Test.prototype.end">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>end
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function (err) {
+    var self = this;
+    if (arguments.length &gt;= 1 &amp;&amp; !!err) {
+        this.ifError(err);
+    }
+
+    if (this.calledEnd) {
+        this.fail('.end() called twice');
+    }
+    this.calledEnd = true;
+    this._end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- opts.skip = true/false. See test.skip.
+- opts.timeout = 500. Set a timeout for the test, after which it will fail.
+  See test.timeoutAfter.
+- opts.objectPrintDepth = 5. Configure max depth of expected / actual object
+  printing.
+
+If you forget to `t.plan()` out how many assertions you are going to run and you
+don't call `t.<span class="apidocCodeKeywordSpan">end</span>()` explicitly, your test will hang.
+
+## test.skip(name, cb)
+
+Generate a new test that will be skipped over.
+
+## test.onFinish(fn)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.equal" id="apidoc.element.tape.Test.prototype.equal">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>equal
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equal = function (a, b, msg, extra) {
+    this._assert(a === b, {
+        message : defined(msg, 'should be equal'),
+        operator : 'equal',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+``` js
+var test = require('tape');
+
+test('timing test', function (t) {
+    t.plan(2);
+
+    t.<span class="apidocCodeKeywordSpan">equal</span>(typeof Date.now, 'function');
+    var start = Date.now();
+
+    setTimeout(function () {
+        t.equal(Date.now() - start, 100);
+    }, 100);
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.equals" id="apidoc.element.tape.Test.prototype.equals">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>equals
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equals = function (a, b, msg, extra) {
+    this._assert(a === b, {
+        message : defined(msg, 'should be equal'),
+        operator : 'equal',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Aliases: `t.ifError()`, `t.ifErr()`, `t.iferror()`
+
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">equals</span>()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.error" id="apidoc.element.tape.Test.prototype.error">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>error
+        <span class="apidocSignatureSpan">(err, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (err, msg, extra) {
+    this._assert(!err, {
+        message : defined(msg, String(err)),
+        operator : 'error',
+        actual : err,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.notOk(value, msg)
+
+Assert that `value` is falsy with an optional description of the assertion `msg`.
+
+Aliases: `t.false()`, `t.notok()`
+
+## t.<span class="apidocCodeKeywordSpan">error</span>(err, msg)
+
+Assert that `err` is falsy. If `err` is non-falsy, use its `err.message` as the
+description message.
+
+Aliases: `t.ifError()`, `t.ifErr()`, `t.iferror()`
+
+## t.equal(actual, expected, msg)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.fail" id="apidoc.element.tape.Test.prototype.fail">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>fail
+        <span class="apidocSignatureSpan">(msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fail = function (msg, extra) {
+    this._assert(false, {
+        message : msg,
+        operator : 'fail',
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+the `n`th, or after `t.end()` is called, they will generate errors.
+
+## t.end(err)
+
+Declare the end of a test explicitly. If `err` is passed in `t.end` will assert
+that it is falsey.
+
+## t.<span class="apidocCodeKeywordSpan">fail</span>(msg)
+
+Generate a failing assertion with a message `msg`.
+
+## t.pass(msg)
+
+Generate a passing assertion with a message `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.false" id="apidoc.element.tape.Test.prototype.false">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>false
+        <span class="apidocSignatureSpan">(value, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">false = function (value, msg, extra) {
+    this._assert(!value, {
+        message : defined(msg, 'should be falsy'),
+        operator : 'notOk',
+        expected : false,
+        actual : value,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Aliases: `t.true()`, `t.assert()`
+
+## t.notOk(value, msg)
+
+Assert that `value` is falsy with an optional description of the assertion `msg`.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">false</span>()`, `t.notok()`
+
+## t.error(err, msg)
+
+Assert that `err` is falsy. If `err` is non-falsy, use its `err.message` as the
+description message.
+
+Aliases: `t.ifError()`, `t.ifErr()`, `t.iferror()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.ifErr" id="apidoc.element.tape.Test.prototype.ifErr">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>ifErr
+        <span class="apidocSignatureSpan">(err, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ifErr = function (err, msg, extra) {
+    this._assert(!err, {
+        message : defined(msg, String(err)),
+        operator : 'error',
+        actual : err,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Aliases: `t.false()`, `t.notok()`
+
+## t.error(err, msg)
+
+Assert that `err` is falsy. If `err` is non-falsy, use its `err.message` as the
+description message.
+
+Aliases: `t.ifError()`, `t.<span class="apidocCodeKeywordSpan">ifErr</span>()`, `t.iferror()`
+
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.ifError" id="apidoc.element.tape.Test.prototype.ifError">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>ifError
+        <span class="apidocSignatureSpan">(err, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ifError = function (err, msg, extra) {
+    this._assert(!err, {
+        message : defined(msg, String(err)),
+        operator : 'error',
+        actual : err,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Aliases: `t.false()`, `t.notok()`
+
+## t.error(err, msg)
+
+Assert that `err` is falsy. If `err` is non-falsy, use its `err.message` as the
+description message.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">ifError</span>()`, `t.ifErr()`, `t.iferror()`
+
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.iferror" id="apidoc.element.tape.Test.prototype.iferror">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>iferror
+        <span class="apidocSignatureSpan">(err, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iferror = function (err, msg, extra) {
+    this._assert(!err, {
+        message : defined(msg, String(err)),
+        operator : 'error',
+        actual : err,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Aliases: `t.false()`, `t.notok()`
+
+## t.error(err, msg)
+
+Assert that `err` is falsy. If `err` is non-falsy, use its `err.message` as the
+description message.
+
+Aliases: `t.ifError()`, `t.ifErr()`, `t.<span class="apidocCodeKeywordSpan">iferror</span>()`
+
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.is" id="apidoc.element.tape.Test.prototype.is">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>is
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">is = function (a, b, msg, extra) {
+    this._assert(a === b, {
+        message : defined(msg, 'should be equal'),
+        operator : 'equal',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Aliases: `t.ifError()`, `t.ifErr()`, `t.iferror()`
+
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.equals()`, `t.isEqual()`, `t.<span class="apidocCodeKeywordSpan">is</span>()`, `t.strictEqual()`,
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isEqual" id="apidoc.element.tape.Test.prototype.isEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isEqual = function (a, b, msg, extra) {
+    this._assert(a === b, {
+        message : defined(msg, 'should be equal'),
+        operator : 'equal',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Aliases: `t.ifError()`, `t.ifErr()`, `t.iferror()`
+
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.equals()`, `t.<span class="apidocCodeKeywordSpan">isEqual</span>()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isEquivalent" id="apidoc.element.tape.Test.prototype.isEquivalent">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isEquivalent
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isEquivalent = function (a, b, msg, extra) {
+    this._assert(deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'deepEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.deepEquals()`, `t.<span class="apidocCodeKeywordSpan">isEquivalent</span>()`, `t.same()`
+
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isInequal" id="apidoc.element.tape.Test.prototype.isInequal">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isInequal
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isInequal = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.isNot()`, `t.not()`, `t.doesNotEqual()`, `t.<span class="apidocCodeKeywordSpan">isInequal</span>()`
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isInequivalent" id="apidoc.element.tape.Test.prototype.isInequivalent">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isInequivalent
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isInequivalent = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should not be equivalent'),
+        operator : 'notDeepEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notEquivalent()`, `t.notDeeply()`, `t.notSame()`,
+`t.isNotDeepEqual()`, `t.isNotDeeply()`, `t.isNotEquivalent()`,
+`t.<span class="apidocCodeKeywordSpan">isInequivalent</span>()`
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isNot" id="apidoc.element.tape.Test.prototype.isNot">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNot
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNot = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.<span class="apidocCodeKeywordSpan">isNot</span>()`, `t.not()`, `t.doesNotEqual()`, `t.isInequal()`
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isNotDeepEqual" id="apidoc.element.tape.Test.prototype.isNotDeepEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNotDeepEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNotDeepEqual = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should not be equivalent'),
+        operator : 'notDeepEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notEquivalent()`, `t.notDeeply()`, `t.notSame()`,
+`t.<span class="apidocCodeKeywordSpan">isNotDeepEqual</span>()`, `t.isNotDeeply()`, `t.isNotEquivalent()`,
+`t.isInequivalent()`
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isNotDeeply" id="apidoc.element.tape.Test.prototype.isNotDeeply">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNotDeeply
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNotDeeply = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should not be equivalent'),
+        operator : 'notDeepEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notEquivalent()`, `t.notDeeply()`, `t.notSame()`,
+`t.isNotDeepEqual()`, `t.<span class="apidocCodeKeywordSpan">isNotDeeply</span>()`, `t.isNotEquivalent()`,
+`t.isInequivalent()`
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isNotEqual" id="apidoc.element.tape.Test.prototype.isNotEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNotEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNotEqual = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.<span class="apidocCodeKeywordSpan">isNotEqual</span>()`, `t.isNot()`, `t.not()`, `t.doesNotEqual()`, `t.isInequal()`
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.isNotEquivalent" id="apidoc.element.tape.Test.prototype.isNotEquivalent">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>isNotEquivalent
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNotEquivalent = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should not be equivalent'),
+        operator : 'notDeepEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notEquivalent()`, `t.notDeeply()`, `t.notSame()`,
+`t.isNotDeepEqual()`, `t.isNotDeeply()`, `t.<span class="apidocCodeKeywordSpan">isNotEquivalent</span>()`,
+`t.isInequivalent()`
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.looseEqual" id="apidoc.element.tape.Test.prototype.looseEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>looseEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">looseEqual = function (a, b, msg, extra) {
+    this._assert(deepEqual(a, b), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'deepLooseEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">looseEqual</span>()`, `t.looseEquals()`
+
+## t.notDeepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.looseEquals" id="apidoc.element.tape.Test.prototype.looseEquals">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>looseEquals
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">looseEquals = function (a, b, msg, extra) {
+    this._assert(deepEqual(a, b), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'deepLooseEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.looseEqual()`, `t.<span class="apidocCodeKeywordSpan">looseEquals</span>()`
+
+## t.notDeepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.not" id="apidoc.element.tape.Test.prototype.not">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>not
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">not = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.isNot()`, `t.<span class="apidocCodeKeywordSpan">not</span>()`, `t.doesNotEqual()`, `t.isInequal()`
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notDeepEqual" id="apidoc.element.tape.Test.prototype.notDeepEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notDeepEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notDeepEqual = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should not be equivalent'),
+        operator : 'notDeepEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.deepEquals()`, `t.isEquivalent()`, `t.same()`
+
+## t.<span class="apidocCodeKeywordSpan">notDeepEqual</span>(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notEquivalent()`, `t.notDeeply()`, `t.notSame()`,
+`t.isNotDeepEqual()`, `t.isNotDeeply()`, `t.isNotEquivalent()`,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notDeepLooseEqual" id="apidoc.element.tape.Test.prototype.notDeepLooseEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notDeepLooseEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notDeepLooseEqual = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'notDeepLooseEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.looseEqual()`, `t.looseEquals()`
+
+## t.<span class="apidocCodeKeywordSpan">notDeepLooseEqual</span>(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notLooseEqual()`, `t.notLooseEquals()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notDeeply" id="apidoc.element.tape.Test.prototype.notDeeply">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notDeeply
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notDeeply = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should not be equivalent'),
+        operator : 'notDeepEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notEquivalent()`, `t.<span class="apidocCodeKeywordSpan">notDeeply</span>()`, `t.notSame()`,
+`t.isNotDeepEqual()`, `t.isNotDeeply()`, `t.isNotEquivalent()`,
+`t.isInequivalent()`
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notEqual" id="apidoc.element.tape.Test.prototype.notEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notEqual = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+
+## t.<span class="apidocCodeKeywordSpan">notEqual</span>(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.isNot()`, `t.not()`, `t.doesNotEqual()`, `t.isInequal()`
+
+## t.deepEqual(actual, expected, msg)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notEquals" id="apidoc.element.tape.Test.prototype.notEquals">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notEquals
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notEquals = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">notEquals</span>()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.isNot()`, `t.not()`, `t.doesNotEqual()`, `t.isInequal()`
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notEquivalent" id="apidoc.element.tape.Test.prototype.notEquivalent">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notEquivalent
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notEquivalent = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should not be equivalent'),
+        operator : 'notDeepEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">notEquivalent</span>()`, `t.notDeeply()`, `t.notSame()`,
+`t.isNotDeepEqual()`, `t.isNotDeeply()`, `t.isNotEquivalent()`,
+`t.isInequivalent()`
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notLooseEqual" id="apidoc.element.tape.Test.prototype.notLooseEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notLooseEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notLooseEqual = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'notDeepLooseEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.notDeepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">notLooseEqual</span>()`, `t.notLooseEquals()`
+
+## t.throws(fn, expected, msg)
+
+Assert that the function call `fn()` throws an exception. `expected`, if present, must be a `RegExp` or `Function`. The `RegExp`
+matches the string representation of the exception, as generated by `err.toString()`. The `Function` is the exception thrown (e.
+g. `Error`). `msg` is an optional description of the assertion.
+
+## t.doesNotThrow(fn, expected, msg)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notLooseEquals" id="apidoc.element.tape.Test.prototype.notLooseEquals">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notLooseEquals
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notLooseEquals = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'notDeepLooseEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.notDeepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notLooseEqual()`, `t.<span class="apidocCodeKeywordSpan">notLooseEquals</span>()`
+
+## t.throws(fn, expected, msg)
+
+Assert that the function call `fn()` throws an exception. `expected`, if present, must be a `RegExp` or `Function`. The `RegExp`
+matches the string representation of the exception, as generated by `err.toString()`. The `Function` is the exception thrown (e.
+g. `Error`). `msg` is an optional description of the assertion.
+
+## t.doesNotThrow(fn, expected, msg)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notOk" id="apidoc.element.tape.Test.prototype.notOk">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notOk
+        <span class="apidocSignatureSpan">(value, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notOk = function (value, msg, extra) {
+    this._assert(!value, {
+        message : defined(msg, 'should be falsy'),
+        operator : 'notOk',
+        expected : false,
+        actual : value,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.ok(value, msg)
+
+Assert that `value` is truthy with an optional description of the assertion `msg`.
+
+Aliases: `t.true()`, `t.assert()`
+
+## t.<span class="apidocCodeKeywordSpan">notOk</span>(value, msg)
+
+Assert that `value` is falsy with an optional description of the assertion `msg`.
+
+Aliases: `t.false()`, `t.notok()`
+
+## t.error(err, msg)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notSame" id="apidoc.element.tape.Test.prototype.notSame">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notSame
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notSame = function (a, b, msg, extra) {
+    this._assert(!deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should not be equivalent'),
+        operator : 'notDeepEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notEquivalent()`, `t.notDeeply()`, `t.<span class="apidocCodeKeywordSpan">notSame</span>()`,
+`t.isNotDeepEqual()`, `t.isNotDeeply()`, `t.isNotEquivalent()`,
+`t.isInequivalent()`
+
+## t.deepLooseEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notStrictEqual" id="apidoc.element.tape.Test.prototype.notStrictEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notStrictEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notStrictEqual = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.<span class="apidocCodeKeywordSpan">notStrictEqual</span>()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.isNot()`, `t.not()`, `t.doesNotEqual()`, `t.isInequal()`
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notStrictEquals" id="apidoc.element.tape.Test.prototype.notStrictEquals">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notStrictEquals
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notStrictEquals = function (a, b, msg, extra) {
+    this._assert(a !== b, {
+        message : defined(msg, 'should not be equal'),
+        operator : 'notEqual',
+        actual : a,
+        notExpected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.<span class="apidocCodeKeywordSpan">notStrictEquals</span>()`,
+`t.isNotEqual()`, `t.isNot()`, `t.not()`, `t.doesNotEqual()`, `t.isInequal()`
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.notok" id="apidoc.element.tape.Test.prototype.notok">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>notok
+        <span class="apidocSignatureSpan">(value, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notok = function (value, msg, extra) {
+    this._assert(!value, {
+        message : defined(msg, 'should be falsy'),
+        operator : 'notOk',
+        expected : false,
+        actual : value,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Aliases: `t.true()`, `t.assert()`
+
+## t.notOk(value, msg)
+
+Assert that `value` is falsy with an optional description of the assertion `msg`.
+
+Aliases: `t.false()`, `t.<span class="apidocCodeKeywordSpan">notok</span>()`
+
+## t.error(err, msg)
+
+Assert that `err` is falsy. If `err` is non-falsy, use its `err.message` as the
+description message.
+
+Aliases: `t.ifError()`, `t.ifErr()`, `t.iferror()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.ok" id="apidoc.element.tape.Test.prototype.ok">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>ok
+        <span class="apidocSignatureSpan">(value, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ok = function (value, msg, extra) {
+    this._assert(value, {
+        message : defined(msg, 'should be truthy'),
+        operator : 'ok',
+        expected : true,
+        actual : value,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Automatically timeout the test after X ms.
+
+## t.skip(msg)
+
+Generate an assertion that will be skipped over.
+
+## t.<span class="apidocCodeKeywordSpan">ok</span>(value, msg)
+
+Assert that `value` is truthy with an optional description of the assertion `msg`.
+
+Aliases: `t.true()`, `t.assert()`
+
+## t.notOk(value, msg)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.pass" id="apidoc.element.tape.Test.prototype.pass">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>pass
+        <span class="apidocSignatureSpan">(msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pass = function (msg, extra) {
+    this._assert(true, {
+        message : msg,
+        operator : 'pass',
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Declare the end of a test explicitly. If `err` is passed in `t.end` will assert
+that it is falsey.
+
+## t.fail(msg)
+
+Generate a failing assertion with a message `msg`.
+
+## t.<span class="apidocCodeKeywordSpan">pass</span>(msg)
+
+Generate a passing assertion with a message `msg`.
+
+## t.timeoutAfter(ms)
+
+Automatically timeout the test after X ms.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.plan" id="apidoc.element.tape.Test.prototype.plan">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>plan
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">plan = function (n) {
+    this._plan = n;
+    this.emit('plan', n);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+# example
+
+``` js
+var test = require('tape');
+
+test('timing test', function (t) {
+t.<span class="apidocCodeKeywordSpan">plan</span>(2);
+
+t.equal(typeof Date.now, 'function');
+var start = Date.now();
+
+setTimeout(function () {
+    t.equal(Date.now() - start, 100);
+}, 100);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.run" id="apidoc.element.tape.Test.prototype.run">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function () {
+    if (this._skip) {
+        this.comment('SKIP ' + this.name);
+    }
+    if (!this._cb || this._skip) {
+        return this._end();
+    }
+    if (this._timeout != null) {
+        this.timeoutAfter(this._timeout);
+    }
+    this.emit('prerun');
+    this._cb(this);
+    this.emit('run');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        output.queue('TAP version 13\n');
+        self._stream.pipe(output);
+    }
+
+    nextTick(function next() {
+        var t;
+        while (t = getNextTest(self)) {
+            t.<span class="apidocCodeKeywordSpan">run</span>();
+            if (!t.ended) return t.once('end', function(){ nextTick(next); });
+        }
+        self.emit('done');
+    });
+
+    return output;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.same" id="apidoc.element.tape.Test.prototype.same">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>same
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">same = function (a, b, msg, extra) {
+    this._assert(deepEqual(a, b, { strict: true }), {
+        message : defined(msg, 'should be equivalent'),
+        operator : 'deepEqual',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## t.deepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.deepEquals()`, `t.isEquivalent()`, `t.<span class="apidocCodeKeywordSpan">same</span>()`
+
+## t.notDeepEqual(actual, expected, msg)
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with strict comparisons (`===`) on leaf nodes and an optional description of the assertion `msg`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.skip" id="apidoc.element.tape.Test.prototype.skip">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>skip
+        <span class="apidocSignatureSpan">(msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">skip = function (msg, extra) {
+    this._assert(true, {
+        message : msg,
+        operator : 'skip',
+        skip : true,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  See test.timeoutAfter.
+- opts.objectPrintDepth = 5. Configure max depth of expected / actual object
+  printing.
+
+If you forget to `t.plan()` out how many assertions you are going to run and you
+don't call `t.end()` explicitly, your test will hang.
+
+## test.<span class="apidocCodeKeywordSpan">skip</span>(name, cb)
+
+Generate a new test that will be skipped over.
+
+## test.onFinish(fn)
+
+The onFinish hook will get invoked when ALL tape tests have finished
+right before tape is about to print the test summary.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.strictEqual" id="apidoc.element.tape.Test.prototype.strictEqual">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>strictEqual
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">strictEqual = function (a, b, msg, extra) {
+    this._assert(a === b, {
+        message : defined(msg, 'should be equal'),
+        operator : 'equal',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Aliases: `t.ifError()`, `t.ifErr()`, `t.iferror()`
+
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.<span class="apidocCodeKeywordSpan">strictEqual</span>()`,
+`t.strictEquals()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.strictEquals" id="apidoc.element.tape.Test.prototype.strictEquals">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>strictEquals
+        <span class="apidocSignatureSpan">(a, b, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">strictEquals = function (a, b, msg, extra) {
+    this._assert(a === b, {
+        message : defined(msg, 'should be equal'),
+        operator : 'equal',
+        actual : a,
+        expected : b,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Aliases: `t.ifError()`, `t.ifErr()`, `t.iferror()`
+
+## t.equal(actual, expected, msg)
+
+Assert that `actual === expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.equals()`, `t.isEqual()`, `t.is()`, `t.strictEqual()`,
+`t.<span class="apidocCodeKeywordSpan">strictEquals</span>()`
+
+## t.notEqual(actual, expected, msg)
+
+Assert that `actual !== expected` with an optional description of the assertion `msg`.
+
+Aliases: `t.notEquals()`, `t.notStrictEqual()`, `t.notStrictEquals()`,
+`t.isNotEqual()`, `t.isNot()`, `t.not()`, `t.doesNotEqual()`, `t.isInequal()`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.test" id="apidoc.element.tape.Test.prototype.test">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>test
+        <span class="apidocSignatureSpan">(name, opts, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">test = function (name, opts, cb) {
+    var self = this;
+    var t = new Test(name, opts, cb);
+    this._progeny.push(t);
+    this.pendingCount++;
+    this.emit('test', t);
+    t.on('prerun', function () {
+        self.assertCount++;
+    })
+
+    if (!self._pendingAsserts()) {
+        nextTick(function () {
+            self._end();
+        });
+    }
+
+    nextTick(function() {
+        if (!self._plan &amp;&amp; self.pendingCount == self._progeny.length) {
+            self._end();
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that the function call `fn()` throws an exception. `expected`, if present, must be a `RegExp` or `Function`. The `RegExp`
+matches the string representation of the exception, as generated by `err.toString()`. The `Function` is the exception thrown (e.
+g. `Error`). `msg` is an optional description of the assertion.
+
+## t.doesNotThrow(fn, expected, msg)
+
+Assert that the function call `fn()` does not throw an exception. `msg` is an optional description of the assertion.
+
+## t.<span class="apidocCodeKeywordSpan">test</span>(name, [opts], cb)
+
+Create a subtest with a new test handle `st` from `cb(st)` inside the current
+test `t`. `cb(st)` will only fire when `t` finishes. Additional tests queued up
+after `t` will not be run until all subtests finish.
+
+You may pass the same options that [`test()`](#testname-opts-cb) accepts.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.throws" id="apidoc.element.tape.Test.prototype.throws">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>throws
+        <span class="apidocSignatureSpan">(fn, expected, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">throws = function (fn, expected, msg, extra) {
+    if (typeof expected === 'string') {
+        msg = expected;
+        expected = undefined;
+    }
+
+    var caught = undefined;
+
+    try {
+        fn();
+    } catch (err) {
+        caught = { error : err };
+        if ((err != null) &amp;&amp; (!isEnumerable(err, 'message') || !has(err, 'message'))) {
+            var message = err.message;
+            delete err.message;
+            err.message = message;
+        }
+    }
+
+    var passed = caught;
+
+    if (expected instanceof RegExp) {
+        passed = expected.test(caught &amp;&amp; caught.error);
+        expected = String(expected);
+    }
+
+    if (typeof expected === 'function' &amp;&amp; caught) {
+        passed = caught.error instanceof expected;
+        caught.error = caught.error.constructor;
+    }
+
+    this._assert(typeof fn === 'function' &amp;&amp; passed, {
+        message : defined(msg, 'should throw'),
+        operator : 'throws',
+        actual : caught &amp;&amp; caught.error,
+        expected : expected,
+        error: !passed &amp;&amp; caught &amp;&amp; caught.error,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Assert that `actual` and `expected` do not have the same structure and nested values using
+[node's deepEqual() algorithm](https://github.com/substack/node-deep-equal)
+with loose comparisons (`==`) on leaf nodes and an optional description of the assertion `msg`.
+
+Aliases: `t.notLooseEqual()`, `t.notLooseEquals()`
+
+## t.<span class="apidocCodeKeywordSpan">throws</span>(fn, expected, msg)
+
+Assert that the function call `fn()` throws an exception. `expected`, if present, must be a `RegExp` or `Function`. The `RegExp`
+matches the string representation of the exception, as generated by `err.toString()`. The `Function` is the exception thrown (e.
+g. `Error`). `msg` is an optional description of the assertion.
+
+## t.doesNotThrow(fn, expected, msg)
+
+Assert that the function call `fn()` does not throw an exception. `msg` is an optional description of the assertion.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.timeoutAfter" id="apidoc.element.tape.Test.prototype.timeoutAfter">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>timeoutAfter
+        <span class="apidocSignatureSpan">(ms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timeoutAfter = function (ms) {
+    if (!ms) throw new Error('timeoutAfter requires a timespan');
+    var self = this;
+    var timeout = safeSetTimeout(function() {
+        self.fail('test timed out after ' + ms + 'ms');
+        self.end();
+    }, ms);
+    this.once('end', function() {
+        clearTimeout(timeout);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Generate a failing assertion with a message `msg`.
+
+## t.pass(msg)
+
+Generate a passing assertion with a message `msg`.
+
+## t.<span class="apidocCodeKeywordSpan">timeoutAfter</span>(ms)
+
+Automatically timeout the test after X ms.
+
+## t.skip(msg)
+
+Generate an assertion that will be skipped over.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.Test.prototype.true" id="apidoc.element.tape.Test.prototype.true">
+        function <span class="apidocSignatureSpan">tape.Test.prototype.</span>true
+        <span class="apidocSignatureSpan">(value, msg, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">true = function (value, msg, extra) {
+    this._assert(value, {
+        message : defined(msg, 'should be truthy'),
+        operator : 'ok',
+        expected : true,
+        actual : value,
+        extra : extra
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Generate an assertion that will be skipped over.
+
+## t.ok(value, msg)
+
+Assert that `value` is truthy with an optional description of the assertion `msg`.
+
+Aliases: `t.<span class="apidocCodeKeywordSpan">true</span>()`, `t.assert()`
+
+## t.notOk(value, msg)
+
+Assert that `value` is falsy with an optional description of the assertion `msg`.
+
+Aliases: `t.false()`, `t.notok()`
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tape.results" id="apidoc.module.tape.results">module tape.results</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tape.results.results" id="apidoc.element.tape.results.results">
+        function <span class="apidocSignatureSpan">tape.</span>results
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Results() {
+    if (!(this instanceof Results)) return new Results;
+    this.count = 0;
+    this.fail = 0;
+    this.pass = 0;
+    this._stream = through();
+    this.tests = [];
+    this._only = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.results.super_" id="apidoc.element.tape.results.super_">
+        function <span class="apidocSignatureSpan">tape.results.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tape.results.prototype" id="apidoc.module.tape.results.prototype">module tape.results.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tape.results.prototype._watch" id="apidoc.element.tape.results.prototype._watch">
+        function <span class="apidocSignatureSpan">tape.results.prototype.</span>_watch
+        <span class="apidocSignatureSpan">(t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_watch = function (t) {
+    var self = this;
+    var write = function (s) { self._stream.queue(s) };
+    t.once('prerun', function () {
+        write('# ' + t.name + '\n');
+    });
+
+    t.on('result', function (res) {
+        if (typeof res === 'string') {
+            write('# ' + res + '\n');
+            return;
+        }
+        write(encodeResult(res, self.count + 1));
+        self.count ++;
+
+        if (res.ok) self.pass ++
+        else self.fail ++
+    });
+
+    t.on('test', function (st) { self._watch(st) });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    return output;
+};
+
+Results.prototype.push = function (t) {
+    var self = this;
+    self.tests.push(t);
+    self.<span class="apidocCodeKeywordSpan">_watch</span>(t);
+    self.emit('_push', t);
+};
+
+Results.prototype.only = function (t) {
+    this._only = t;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.results.prototype.close" id="apidoc.element.tape.results.prototype.close">
+        function <span class="apidocSignatureSpan">tape.results.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+    var self = this;
+    if (self.closed) self._stream.emit('error', new Error('ALREADY CLOSED'));
+    self.closed = true;
+    var write = function (s) { self._stream.queue(s) };
+
+    write('\n1..' + self.count + '\n');
+    write('# tests ' + self.count + '\n');
+    write('# pass  ' + self.pass + '\n');
+    if (self.fail) write('# fail  ' + self.fail + '\n')
+    else write('\n# ok\n')
+
+    self._stream.queue(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            var only = harness._results._only;
+            for (var i = 0; i &lt; harness._tests.length; i++) {
+                var t = harness._tests[i];
+                if (only &amp;&amp; t !== only) continue;
+                t._exit();
+            }
+        }
+        harness.<span class="apidocCodeKeywordSpan">close</span>();
+        process.exit(code || harness._exitCode);
+    });
+
+    return harness;
+}
+
+exports.createHarness = createHarness;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.results.prototype.createStream" id="apidoc.element.tape.results.prototype.createStream">
+        function <span class="apidocSignatureSpan">tape.results.prototype.</span>createStream
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createStream = function (opts) {
+    if (!opts) opts = {};
+    var self = this;
+    var output, testId = 0;
+    if (opts.objectMode) {
+        output = through();
+        self.on('_push', function ontest (t, extra) {
+            if (!extra) extra = {};
+            var id = testId++;
+            t.once('prerun', function () {
+                var row = {
+                    type: 'test',
+                    name: t.name,
+                    id: id
+                };
+                if (has(extra, 'parent')) {
+                    row.parent = extra.parent;
+                }
+                output.queue(row);
+            });
+            t.on('test', function (st) {
+                ontest(st, { parent: id });
+            });
+            t.on('result', function (res) {
+                res.test = id;
+                res.type = 'assert';
+                output.queue(res);
+            });
+            t.on('end', function () {
+                output.queue({ type: 'end', test: id });
+            });
+        });
+        self.on('done', function () { output.queue(null) });
+    }
+    else {
+        output = resumer();
+        output.queue('TAP version 13\n');
+        self._stream.pipe(output);
+    }
+
+    nextTick(function next() {
+        var t;
+        while (t = getNextTest(self)) {
+            t.run();
+            if (!t.ended) return t.once('end', function(){ nextTick(next); });
+        }
+        self.emit('done');
+    });
+
+    return output;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+lazyLoad.createStream = function (opts) {
+    if (!opts) opts = {};
+    if (!harness) {
+        var output = through();
+        getHarness({ stream: output, objectMode: opts.objectMode });
+        return output;
+    }
+    return harness.<span class="apidocCodeKeywordSpan">createStream</span>(opts);
+};
+
+lazyLoad.onFinish = function () {
+    return getHarness().onFinish.apply(this, arguments);
+};
+
+lazyLoad.getHarness = getHarness
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.results.prototype.only" id="apidoc.element.tape.results.prototype.only">
+        function <span class="apidocSignatureSpan">tape.results.prototype.</span>only
+        <span class="apidocSignatureSpan">(t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">only = function (t) {
+    this._only = t;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+var only = false;
+test.only = function () {
+    if (only) throw new Error('there can only be one only test');
+    only = true;
+    var t = test.apply(null, arguments);
+    results.<span class="apidocCodeKeywordSpan">only</span>(t);
+    return t;
+};
+test._exitCode = 0;
+
+test.close = function () { results.close() };
+
+return test;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tape.results.prototype.push" id="apidoc.element.tape.results.prototype.push">
+        function <span class="apidocSignatureSpan">tape.results.prototype.</span>push
+        <span class="apidocSignatureSpan">(t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (t) {
+    var self = this;
+    self.tests.push(t);
+    self._watch(t);
+    self.emit('_push', t);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var results = createResult();
+if (conf_.autoclose !== false) {
+    results.once('done', function () { results.close() });
+}
+
+var test = function (name, conf, cb) {
+    var t = new Test(name, conf, cb);
+    test._tests.<span class="apidocCodeKeywordSpan">push</span>(t);
+
+    (function inspectCode (st) {
+        st.on('test', function sub (st_) {
+            inspectCode(st_);
+        });
+        st.on('result', function (r) {
+            if (!r.ok &amp;&amp; typeof r !== 'string') test._exitCode = 1
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
