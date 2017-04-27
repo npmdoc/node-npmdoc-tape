@@ -1,6 +1,6 @@
 # npmdoc-tape
 
-#### api documentation for  [tape (v4.6.3)](https://github.com/substack/tape)  [![npm package](https://img.shields.io/npm/v/npmdoc-tape.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tape) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tape.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tape)
+#### basic api documentation for  [tape (v4.6.3)](https://github.com/substack/tape)  [![npm package](https://img.shields.io/npm/v/npmdoc-tape.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tape) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tape.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tape)
 
 #### tap-producing test harness for node and browsers
 
