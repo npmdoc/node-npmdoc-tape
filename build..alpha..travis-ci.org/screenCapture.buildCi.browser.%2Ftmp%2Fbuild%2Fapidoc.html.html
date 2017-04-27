@@ -1053,7 +1053,20 @@ lazyLoad.getHarness = getHarness
     if (!harness) harness = createExitHarness(opts);
     return harness;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var tape = require('../');
+var tap = require('tap');
+
+tap.test('main harness object is exposed', function (assert) {
+
+   assert.equal(typeof tape.getHarness, 'function', 'tape.getHarness is a function')
+
+   assert.equal(tape.<span class="apidocCodeKeywordSpan">getHarness</span>()._results.pass, 0)
+
+   assert.end()
+
+})
+...</pre></li>
     </ul>
 
 
@@ -1401,7 +1414,23 @@ right before tape is about to print the test summary.
         });
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            expected : self._plan,
+            actual : self._plan - pendingAsserts
+        });
+    }
+};
+
+Test.prototype.fail = function (msg, extra) {
+    this.<span class="apidocCodeKeywordSpan">_assert</span>(false, {
+        message : msg,
+        operator : 'fail',
+        extra : extra
+    });
+};
+
+Test.prototype.pass = function (msg, extra) {
+...</pre></li>
     </ul>
 
 
@@ -1433,7 +1462,23 @@ right before tape is about to print the test summary.
     }
     this.ended = true;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+Test.prototype.run = function () {
+if (this._skip) {
+    this.comment('SKIP ' + this.name);
+}
+if (!this._cb || this._skip) {
+    return this.<span class="apidocCodeKeywordSpan">_end</span>();
+}
+if (this._timeout != null) {
+    this.timeoutAfter(this._timeout);
+}
+this.emit('prerun');
+this._cb(this);
+this.emit('run');
+...</pre></li>
     </ul>
 
 
@@ -1497,7 +1542,23 @@ return harness;
         return this._plan - (this._progeny.length + this.assertCount);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._progeny.push(t);
+this.pendingCount++;
+this.emit('test', t);
+t.on('prerun', function () {
+    self.assertCount++;
+})
+
+if (!self.<span class="apidocCodeKeywordSpan">_pendingAsserts</span>()) {
+    nextTick(function () {
+        self._end();
+    });
+}
+
+nextTick(function() {
+    if (!self._plan &amp;&amp; self.pendingCount == self._progeny.length) {
+...</pre></li>
     </ul>
 
 
@@ -4021,7 +4082,20 @@ lazyLoad.getHarness = getHarness
     if (!harness) harness = createExitHarness(opts);
     return harness;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var tape = require('../');
+var tap = require('tap');
+
+tap.test('main harness object is exposed', function (assert) {
+
+   assert.equal(typeof tape.getHarness, 'function', 'tape.getHarness is a function')
+
+   assert.equal(tape.<span class="apidocCodeKeywordSpan">getHarness</span>()._results.pass, 0)
+
+   assert.end()
+
+})
+...</pre></li>
     </ul>
 
 
